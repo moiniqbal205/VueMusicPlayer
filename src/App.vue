@@ -3,9 +3,13 @@
     <header>
       <h1>MI<span>Tunes</span></h1>
     </header>
+
     <main>
       <section class="player">
-        <h2 class="song-title">{{ current.title }} <br/> <span>{{ current.artist }}</span></h2>
+        <h2 class="song-title">
+          {{ current.title }} <br/> 
+          <span>{{ current.artist }}</span>
+        </h2>
         <div class="controls">
           <button class="prev" @click="prev">
             <i class="material-icons">skip_previous</i>
@@ -21,10 +25,17 @@
           </button>
         </div>
       </section>
+
       <section class="playlist">
         <h3>Playlist</h3>
-        <button v-for="song in songs" :key="song.src" @click="play(song)" :class="(song.src == current.src) ? 'song playing' : 'song'">
-          {{ song.title }} <br/> <span class="song-artist">{{ song.artist }}</span>
+        <button 
+          v-for="song in songs" 
+          :key="song.src" 
+          @click="play(song)" 
+          :class="(song.src == current.src) ? 'song playing' : 'song'"
+        >
+          {{ song.title }} <br/> 
+          <span class="song-artist">{{ song.artist }}</span>
         </button>
       </section>
     </main>
